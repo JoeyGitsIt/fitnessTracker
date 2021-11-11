@@ -2,14 +2,17 @@ const path = require("path");
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
+// route for the exercise page that is in starter code
 router.get("/exercise", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
+// route for the stats page that is in starter code
 router.get("/stats", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
+// route to get workouts
 router.get("/api/workouts", (req, res) => {
   Workout.aggregate([
     {
@@ -28,6 +31,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
+// route to get the last workout
 router.get("/api/workouts/range", (req, res) => {
   Workout.aggregate([
     {
@@ -48,6 +52,7 @@ router.get("/api/workouts/range", (req, res) => {
     });
 });
 
+// route to change/add to the specified workout
 router.put("/api/workouts/:id", (req, res) => {
   Workout.updateOne(
     {
@@ -67,6 +72,7 @@ router.put("/api/workouts/:id", (req, res) => {
     });
 });
 
+// route to create a workout
 router.post("/api/workouts", ({ body }, res) => {
   Workout.create(body)
     .then((workoutDb) => {

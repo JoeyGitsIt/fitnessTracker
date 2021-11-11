@@ -1,4 +1,3 @@
-// 11/5 (friday) paul goes over the project
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
