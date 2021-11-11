@@ -1,4 +1,3 @@
-// took this bit from mini project at the moment
 // 11/5 (friday) paul goes over the project
 const mongoose = require("mongoose");
 
