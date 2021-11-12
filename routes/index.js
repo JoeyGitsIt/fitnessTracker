@@ -1,6 +1,6 @@
 const path = require("path");
 const router = require("express").Router();
-const Workout = require("../models/workout.js");
+const Workout = require("../models/Workout.js");
 
 // route for the exercise page that is in starter code
 router.get("/exercise", (req, res) => {
